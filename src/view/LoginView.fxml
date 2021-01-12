@@ -5,22 +5,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<GridPane alignment="center" hgap="10" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="156.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" />
    </rowConstraints>
    <columnConstraints>
-      <ColumnConstraints maxWidth="116.0" minWidth="10.0" prefWidth="83.0" />
-      <ColumnConstraints maxWidth="137.0" minWidth="10.0" prefWidth="117.0" />
+      <ColumnConstraints maxWidth="116.0" minWidth="10.0" prefWidth="85.0" />
+      <ColumnConstraints maxWidth="137.0" minWidth="10.0" prefWidth="115.0" />
    </columnConstraints>
    <children>
-      <Label text="Korisničko ime" />
-      <Label text="Lozinka" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="1" />
-      <TextField prefHeight="27.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" text="Prijavi se" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Korisničko ime" GridPane.rowIndex="1" />
+      <Label text="Lozinka" GridPane.rowIndex="2" />
+      <TextField fx:id="usernameTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#onClickLoginHandle" text="Prijavi se" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <PasswordField fx:id="passwordTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="messageLbl" prefHeight="17.0" prefWidth="210.0" GridPane.columnSpan="2" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
