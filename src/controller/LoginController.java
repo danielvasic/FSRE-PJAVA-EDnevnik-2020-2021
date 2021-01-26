@@ -3,6 +3,8 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,13 +14,13 @@ import model.Baza;
 import model.Korisnik;
 import model.Tablica;
 
-
+import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class LoginController {
+public class LoginController implements Initializable {
     @FXML
     TextField usernameTxtFld;
 
@@ -46,9 +48,9 @@ public class LoginController {
                 LoginController.logiraniKorisnik = (Korisnik) Tablica.dohvati(Korisnik.class, rezultat.getInt("id"));
 
                 Parent root = FXMLLoader.load(getClass().getResource("../view/KorisniciView.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("");
-                stage.setScene(new Scene(root, 300, 275));
+                Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+                stage.setTitle("Administracija korisnika");
+                stage.setScene(new Scene(root, 640, 480));
                 stage.show();
 
             } else {
@@ -62,4 +64,8 @@ public class LoginController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KorisniciController">
+<AnchorPane fx:id="KorisniciPane" onMouseClicked="#vratiKorisnikaNaNull" prefHeight="400.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KorisniciController">
    <children>
-      <Label fx:id="userDataLbl" layoutX="390.0" layoutY="16.0" prefHeight="17.0" prefWidth="101.0" AnchorPane.rightAnchor="16.0" />
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="437.3078079223633" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="130.0">
+      <Label fx:id="userDataLbl" layoutX="390.0" layoutY="16.0" prefHeight="17.0" prefWidth="84.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="16.0" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="448.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="120.0532455444336" AnchorPane.topAnchor="9.0">
          <image>
             <Image url="@../assets/PngItem_1468479.png" />
          </image>
       </ImageView>
+      <TableView fx:id="KorisniciTbl" layoutX="14.0" layoutY="65.0" onMouseClicked="#odaberiKorisnika" prefHeight="324.0" prefWidth="405.0">
+        <columns>
+          <TableColumn fx:id="IDTblCol" prefWidth="75.0" text="#ID" />
+          <TableColumn fx:id="KorisnickoImeTblCol" prefWidth="75.0" text="Korisničko ime" />
+            <TableColumn fx:id="LozinkaTblCol" prefWidth="75.0" text="Lozinka" />
+            <TableColumn fx:id="UlogaTblCol" prefWidth="75.0" text="Uloga" />
+        </columns>
+      </TableView>
+      <Button layoutX="437.0" layoutY="359.0" mnemonicParsing="false" onAction="#pobrisiKorisnika" text="Pobriši" />
+      <Label layoutX="433.0" layoutY="65.0" text="Korisničko ime" />
+      <TextField fx:id="KorisnickoImeTxt" layoutX="433.0" layoutY="82.0" prefHeight="27.0" prefWidth="221.0" />
+      <Text layoutX="433.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lozinka" />
+      <PasswordField fx:id="LozinkaTxt" layoutX="433.0" layoutY="136.0" prefHeight="27.0" prefWidth="221.0" />
+      <ChoiceBox fx:id="UlogaTxt" layoutX="431.0" layoutY="187.0" prefHeight="27.0" prefWidth="221.0" />
+      <Text layoutX="433.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Odaberite ulogu korisnika" />
+      <Button layoutX="603.0" layoutY="359.0" mnemonicParsing="false" onAction="#spasiKorisnika" text="Spasi" />
    </children>
 </AnchorPane>
