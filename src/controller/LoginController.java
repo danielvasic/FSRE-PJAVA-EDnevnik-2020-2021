@@ -46,11 +46,12 @@ public class LoginController implements Initializable {
             if (rezultat.next()){
                 messageLbl.setText("Uspješno ste se prijavili na sustav.");
                 LoginController.logiraniKorisnik = (Korisnik) Tablica.dohvati(Korisnik.class, rezultat.getInt("id"));
+                String pogled = "../view/" + LoginController.logiraniKorisnik.Uloga + "View.fxml";
 
-                Parent root = FXMLLoader.load(getClass().getResource("../view/KorisniciView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource(pogled));
                 Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
-                stage.setTitle("Administracija korisnika");
-                stage.setScene(new Scene(root, 640, 480));
+                stage.setTitle("Dobrodošli na sustav");
+                stage.setScene(new Scene(root, 640, 500));
                 stage.show();
 
             } else {
